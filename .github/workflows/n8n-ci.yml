@@ -1,0 +1,40 @@
+# n8n-launcher : généré — ne pas modifier à la main.
+# GitHub Actions CI pour ce workspace n8n : exécute les pipelines sélectionnées
+# dans un conteneur n8n isolé et jetable (voir .n8n-tests/runner.py).
+name: n8n-launcher CI
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: "ci-${{ github.ref }}"
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Valider les exports
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validation statique des exports
+        run: python .n8n-tests/validate.py
+
+  test:
+    name: Exécuter les pipelines
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lancer le runner de tests n8n
+        env:
+          N8N_IMAGE: ${{ vars.N8N_IMAGE }}
+          N8N_CI_CREDENTIALS: ${{ secrets.N8N_CI_CREDENTIALS }}
+        run: python .n8n-tests/runner.py

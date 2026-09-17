@@ -1,0 +1,1 @@
+-- n8n-launcher : schéma de la base locale de ce workspace.
