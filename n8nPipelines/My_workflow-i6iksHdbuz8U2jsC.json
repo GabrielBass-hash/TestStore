@@ -1,0 +1,58 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {},
+  "createdAt": "2026-09-17T08:14:51.179Z",
+  "description": null,
+  "id": "i6iksHdbuz8U2jsC",
+  "isArchived": false,
+  "meta": null,
+  "name": "My workflow",
+  "nodeGroups": [],
+  "nodes": [
+    {
+      "id": "35d94d63-7dcb-4828-85b7-9609fbe03bdc",
+      "name": "When clicking \u2018Execute workflow\u2019",
+      "parameters": {},
+      "position": [
+        0,
+        0
+      ],
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "binaryMode": "separate",
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2026-09-17T08:14:51.179Z",
+      "project": {
+        "createdAt": "2026-09-17T08:14:07.497Z",
+        "creatorId": "94af1ff8-dccd-4ba1-89bc-859aea21a0a7",
+        "customTelemetryTags": [],
+        "description": null,
+        "icon": null,
+        "id": "tVawobNF0z8urabL",
+        "name": "n8n Launcher <admin@example.com>",
+        "type": "personal",
+        "updatedAt": "2026-09-17T08:14:10.662Z"
+      },
+      "projectId": "tVawobNF0z8urabL",
+      "role": "workflow:owner",
+      "updatedAt": "2026-09-17T08:14:51.179Z",
+      "workflowId": "i6iksHdbuz8U2jsC"
+    }
+  ],
+  "sourceWorkflowId": null,
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2026-09-17T08:14:51.179Z",
+  "versionCounter": 1,
+  "versionId": "9dfc03a8-46dd-4350-add7-5a576dbd2adb"
+}
