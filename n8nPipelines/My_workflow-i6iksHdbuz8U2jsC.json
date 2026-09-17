@@ -25,6 +25,17 @@
         ]
       ]
     },
+    "Code in JavaScript2": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Code in JavaScript3",
+            "type": "main"
+          }
+        ]
+      ]
+    },
     "When clicking \u2018Execute workflow\u2019": {
       "main": [
         [
@@ -94,6 +105,19 @@
       ],
       "type": "n8n-nodes-base.code",
       "typeVersion": 2
+    },
+    {
+      "id": "dbaa3e63-6824-400e-aaa7-c7031aa0aa1e",
+      "name": "Code in JavaScript3",
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all();"
+      },
+      "position": [
+        928,
+        0
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
     }
   ],
   "pinData": {},
@@ -125,7 +149,7 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2026-09-17T11:24:31.011Z",
-  "versionCounter": 8,
-  "versionId": "7746ead2-4b06-4788-b980-915421638830"
+  "updatedAt": "2026-09-17T12:20:36.605Z",
+  "versionCounter": 10,
+  "versionId": "c7ed668e-1eac-434d-8efc-46247076ba75"
 }
