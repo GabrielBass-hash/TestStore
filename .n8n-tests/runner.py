@@ -79,7 +79,7 @@ class Http:
         self,
         method: str,
         path: str,
-        payload: Any = None,
+        payload: object | None = None,
         headers: dict[str, str] | None = None,
     ) -> tuple[int, Any]:
         """Exécute la requête ; rend (code HTTP, corps JSON ou texte)."""
@@ -348,7 +348,7 @@ def trigger_run(http: Http, workflow_id: str, payload: dict) -> str | None:
     raise RuntimeError(f"n8n a refusé le run de {workflow_id} (HTTP {code}) : {body}")
 
 
-def _execution_detail(data: Any) -> str:
+def _execution_detail(data: object) -> str:
     if not isinstance(data, dict):
         return ""
     result = data.get("resultData") or {}
@@ -499,4 +499,10 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    code = main()
+    sys.stdout.flush()
+    sys.stderr.flush()
+    # Pas de sys.exit() : sous `python -i` / console IDE, une SystemExit au
+    # niveau module était retranscrite en « SystemExit: 1 ». os._exit() donne
+    # le bon code de sortie (CI) sans jamais afficher de traceback.
+    os._exit(code)

@@ -2,6 +2,7 @@
 # Validation statique des exports de workflows et de la sélection de tests.
 # Reste volontairement en bibliothèque standard, sans Docker.
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -73,4 +74,10 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    code = main()
+    sys.stdout.flush()
+    sys.stderr.flush()
+    # Pas de sys.exit() : sous `python -i` / console IDE, une SystemExit au
+    # niveau module était retranscrite en « SystemExit: 1 ». os._exit() donne
+    # le bon code de sortie (CI) sans jamais afficher de traceback.
+    os._exit(code)
