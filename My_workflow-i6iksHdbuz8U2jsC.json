@@ -1,0 +1,155 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Code in JavaScript1",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Code in JavaScript2",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript2": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Code in JavaScript3",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "When clicking \u2018Execute workflow\u2019": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Code in JavaScript",
+            "type": "main"
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2026-09-17T08:14:51.179Z",
+  "description": null,
+  "id": "i6iksHdbuz8U2jsC",
+  "isArchived": false,
+  "meta": null,
+  "name": "My workflow",
+  "nodeGroups": [],
+  "nodes": [
+    {
+      "id": "35d94d63-7dcb-4828-85b7-9609fbe03bdc",
+      "name": "When clicking \u2018Execute workflow\u2019",
+      "parameters": {},
+      "position": [
+        0,
+        0
+      ],
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1
+    },
+    {
+      "id": "b87e9d2f-dc33-4b13-98de-b0f702c4926c",
+      "name": "Code in JavaScript",
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all();"
+      },
+      "position": [
+        224,
+        0
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
+    },
+    {
+      "id": "d6f8b4a2-ec17-4d28-908c-296ef24550e8",
+      "name": "Code in JavaScript1",
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all();"
+      },
+      "position": [
+        448,
+        0
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
+    },
+    {
+      "id": "f964c8db-c9ce-4dd6-a5af-a42eace5a1c5",
+      "name": "Code in JavaScript2",
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all();"
+      },
+      "position": [
+        672,
+        0
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
+    },
+    {
+      "id": "dbaa3e63-6824-400e-aaa7-c7031aa0aa1e",
+      "name": "Code in JavaScript3",
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all();"
+      },
+      "position": [
+        928,
+        0
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "binaryMode": "separate",
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2026-09-17T08:14:51.179Z",
+      "project": {
+        "createdAt": "2026-09-17T08:14:07.497Z",
+        "creatorId": "94af1ff8-dccd-4ba1-89bc-859aea21a0a7",
+        "customTelemetryTags": [],
+        "description": null,
+        "icon": null,
+        "id": "tVawobNF0z8urabL",
+        "name": "n8n Launcher <admin@example.com>",
+        "type": "personal",
+        "updatedAt": "2026-09-17T08:14:10.662Z"
+      },
+      "projectId": "tVawobNF0z8urabL",
+      "role": "workflow:owner",
+      "updatedAt": "2026-09-17T08:14:51.179Z",
+      "workflowId": "i6iksHdbuz8U2jsC"
+    }
+  ],
+  "sourceWorkflowId": null,
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2026-09-17T12:20:36.605Z",
+  "versionCounter": 10,
+  "versionId": "c7ed668e-1eac-434d-8efc-46247076ba75"
+}
